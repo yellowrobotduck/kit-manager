@@ -12,9 +12,9 @@ export class SelfServeApproval extends BaseProfile {
     constructor(app, profileConfig, index) {
         const timeOptions = {
             "Forever" : "Forever",
-            "30m": "30 Minutes"
+            "30m": "30 Minutes",
             "1h": "1 Hour",
-            "90m": "90 Minutes"
+            "90m": "90 Minutes",
             "2h": "2 Hours",
             "4h": "4 Hours",
             "6h": "6 Hours",
