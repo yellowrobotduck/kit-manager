@@ -157,7 +157,7 @@ export class SelfServeApproval extends BaseProfile {
         //        type: "plain_text",
         //        text: "Reason For Request"
         //    },
-        //}
+        // }
         return modal;
     }
 
@@ -166,15 +166,15 @@ export class SelfServeApproval extends BaseProfile {
         await ack();
         let selectedOption = ""
         let selectedTime = "Forever"
-        //let reasonForRequest = ""
+        let reasonForRequest = ""
 
-        if (body.view.blocks.length === 2) {
+        if (body.view.blocks.length === 3) {
             selectedOption = Object.values(Object.values(body.view.state.values)[0])[0].selected_option.value;
             selectedTime = Object.values(Object.values(body.view.state.values)[1])[0].selected_option.value
-            //reasonForRequest = Object.values(Object.values(body.view.state.values)[2])[0].value;
+            reasonForRequest = Object.values(Object.values(body.view.state.values)[2])[0].value;
         } else {
             selectedOption = Object.values(Object.values(body.view.state.values)[0])[0].selected_option.value;
-            //reasonForRequest = Object.values(Object.values(body.view.state.values)[1])[0].value;
+            reasonForRequest = Object.values(Object.values(body.view.state.values)[1])[0].value;
         }
 
         try {
@@ -222,7 +222,7 @@ export class SelfServeApproval extends BaseProfile {
                 requesterSlackId: slackUserId,
                 requestedGroupName: selectedGroup,
                 requestedGroupId: groupId,
-                //reasonForRequest: reasonForRequest,
+                reasonForRequest: reasonForRequest,
                 approverSlackId: slackUserId,
                 selectedTime: selectedTime,
                 selfApproval: true
@@ -297,7 +297,7 @@ export class SelfServeApproval extends BaseProfile {
                 requesterSlackId: slackUserId,
                 requestedGroupName: selectedGroup,
                 requestedGroupId: groupId,
-                //reasonForRequest: reasonForRequest,
+                reasonForRequest: reasonForRequest,
                 selectedTime: selectedTime,
                 selfApproval: false
             }
@@ -437,7 +437,7 @@ export class SelfServeApproval extends BaseProfile {
             requestedGroupId: groupId,
             approverGroup: approverGroup.name,
             approverGroupMembers: approverGroup.users.map(user=>user.email),
-            //reasonForRequest: reasonForRequest,
+            reasonForRequest: reasonForRequest,
             selectedTime: selectedTime,
             selfApproval: false,
             status: "Access Pending Approval"
