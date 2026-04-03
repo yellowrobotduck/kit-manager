@@ -142,22 +142,22 @@ export class SelfServeApproval extends BaseProfile {
 
 
         // reason for request block
-        modal.blocks.push({
-            type: "input",
-            element: {
-                type: "plain_text_input",
-                multiline: true,
-                placeholder: {
-                    type: "plain_text",
-                    text: "Enter your reason for request."
-                },
-                max_length: 100
-            },
-            label: {
-                type: "plain_text",
-                text: "Reason For Request"
-            },
-        })
+        //modal.blocks.push({
+        //    type: "input",
+        //    element: {
+        //        type: "plain_text_input",
+        //        multiline: true,
+        //        placeholder: {
+        //            type: "plain_text",
+        //            text: "Enter your reason for request."
+        //        },
+        //        max_length: 100
+        //    },
+        //    label: {
+        //        type: "plain_text",
+        //        text: "Reason For Request"
+        //    },
+        // }
         return modal;
     }
 
