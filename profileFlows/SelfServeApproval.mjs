@@ -16,6 +16,7 @@ export class SelfServeApproval extends BaseProfile {
             "1h": "1 Hour",
             "90m": "90 Minutes",
             "2h": "2 Hours",
+            "3h": "3 Hours",
             "4h": "4 Hours",
             "6h": "6 Hours",
             "8h": "8 Hours",
@@ -259,7 +260,7 @@ export class SelfServeApproval extends BaseProfile {
 
 
             // sending self approved message to user
-            let messageString = `The access request through profile _'${this.profileName}'_.\nGroup: ${selectedGroup}\n\`Your access will expire in ${selectedTime}\`\n\`Self Approved\`\n_Note: Group changes will be passed to any connected clients automatically without the need to disconnect and reconnect and this process can take ~20 seconds to pass through to connected clients._`
+            let messageString = `Your access to ${selectedGroup} will expire in ${selectedTime}\`\n\`Self Approved\`\n_Note: Group changes can take ~20 seconds to pass through to connected clients._`
             msgOption = {
                 channel: slackUserId,
                 text: messageString,
@@ -682,15 +683,18 @@ export class SelfServeApproval extends BaseProfile {
 
     durationParser (timeNow, selectedTime){
         switch (true) {
-              case /\d+ Minute(s)?$/.test(selectedTime):
+              case /\d+ Minute(s)?$/.test(selectedTime): {
                 const minutes = selectedTime.split(" ")[0]
                 return timeNow + (minutes*60)
-            case /\d+ Hour(s)?$/.test(selectedTime):
+              }
+            case /\d+ Hour(s)?$/.test(selectedTime): {
                 const hours = selectedTime.split(" ")[0]
                 return timeNow + (hours*60*60)
-            case /\d+ Day(s)?$/.test(selectedTime):
+            } 
+            case /\d+ Day(s)?$/.test(selectedTime): {
                 const days = selectedTime.split(" ")[0]
                 return timeNow + (days*24*60*60)
+            }
             default:
                 throw `time option '${selectedTime}' format not supported`
         }
