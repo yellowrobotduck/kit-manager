@@ -260,7 +260,7 @@ export class SelfServeApproval extends BaseProfile {
 
 
             // sending self approved message to user
-            let messageString = `Your access to ${selectedGroup} will expire in ${selectedTime}\`\n\`Self Approved\`\n_Note: Group changes can take ~20 seconds to pass through to connected clients._`
+            let messageString = `Your ${selectedGroup} will expire in ${selectedTime}\n_Note: Group changes can take ~20 seconds to pass through to connected clients._`
             msgOption = {
                 channel: slackUserId,
                 text: messageString,

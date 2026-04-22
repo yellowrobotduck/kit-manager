@@ -16,7 +16,7 @@ export const createHome = async(profileConfig, userEmail) => {
                 type: "section",
                 text: {
                     type: "mrkdwn",
-                    text: "*Welcome!* \nUsing this tool you can change your group profiles.\n*Please note all changes can typically take at least 20 seconds to propagate.*"
+                    text: "*Hey Robot! Thanks for stopping by* \n\nYou can use this tool to turn on or remove the _Full Tunnel Access_ you will need to:\n1. Activate Your Dev or Test Kit\n2.Play On Your Dev or Test Kit\n3.Play with PSN\n\n*If you're having connection issues, it never hurts to try resharing your Twingate VPN.*"
                 }
             },
             {

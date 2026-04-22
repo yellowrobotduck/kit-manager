@@ -158,7 +158,7 @@ export class OneOfProfile extends BaseProfile {
         }
 
         // sending group change message to user
-        const messageString = `The active group of the profile _'${this.profileName}'_ has been changed to _'${selectedGroup}'._ \n\n _Note: Group changes will be passed to any connected clients automatically without the need to disconnect and reconnect and this process can take ~20 seconds to pass through to connected clients._`
+        const messageString = `You have successfully removed _'${this.profileName}'_ \n\n _Note: Group changes can take ~20 seconds to pass through to connected clients._`
         let msgOption = {
             channel: slackUserId,
             text: messageString,
