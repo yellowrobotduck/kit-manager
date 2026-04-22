@@ -16,7 +16,7 @@ export const createHome = async(profileConfig, userEmail) => {
                 type: "section",
                 text: {
                     type: "mrkdwn",
-                    text: "*Hey Robot! Thanks for stopping by* \n\nYou can use this tool to turn on or remove the _Full Tunnel Access_ you will need to:\n1. Activate Your Dev or Test Kit\n2.Play On Your Dev or Test Kit\n3.Play with PSN\n\n*If you're having connection issues, it never hurts to try resharing your Twingate VPN.*"
+                    text: "Hey Robot!* \n\nYou will use this Twingate Slackbot to turn on or remove _Full Tunnel Access_.\n _Full Tunnel Access_ allows you to:\n1. Activate your Dev or Test Kit\n2. Play on your Dev or Test Kit\n3. Play with PSN\n\n_If you're having issues activating or connecting to your kit, it never hurts to try resharing your Twingate VPN._"
                 }
             },
             {
