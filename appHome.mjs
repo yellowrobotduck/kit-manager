@@ -16,7 +16,7 @@ export const createHome = async(profileConfig, userEmail) => {
                 type: "section",
                 text: {
                     type: "mrkdwn",
-                    text: "Hey Robot!* \n\nYou will use this Twingate Slackbot to turn on or remove _Full Tunnel Access_.\n _Full Tunnel Access_ allows you to:\n1. Activate your Dev or Test Kit\n2. Play on your Dev or Test Kit\n3. Play with PSN\n\n_If you're having issues activating or connecting to your kit, it never hurts to try resharing your Twingate VPN._"
+                    text: "Hey Robot!\n\nYou will use this Twingate Slackbot to add or remove yourself from the _Full Tunnel Access_ group.\n\nBeing in the _Full Tunnel Access_ group allows you to:\n1. Play on your Dev or Test Kit\n2. Play with a DEV PSN\n\n*It is always best practice to remove your Full Tunnel Access once you are done*\n\n_If you're having issues activating or connecting to your kit, it never hurts to try resharing your Twingate VPN._"
                 }
             },
             {
@@ -24,7 +24,7 @@ export const createHome = async(profileConfig, userEmail) => {
                 elements: [
                     {
                         type: "mrkdwn",
-                        text: "<https://github.com/Twingate-Labs/tg-group-profile-manager|GitHub> and <https://github.com/Twingate-Labs/tg-group-profile-manager/blob/main/README.md|User Guide>"
+                        text: "<https://badrobotgames.atlassian.net/wiki/spaces/ITDSS/pages/1547436033/Setting+up+Twingate+for+Dev+Test+Kit+Playtesting#Playtesting-with-Twingate|KA for Playing on Twingate> and <https://github.com/Twingate-Labs/tg-group-profile-manager/blob/main/README.md|User Guide>"
                     }
                 ]
             }

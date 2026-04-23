@@ -12,6 +12,7 @@ export class SelfServeApproval extends BaseProfile {
     constructor(app, profileConfig, index) {
         const timeOptions = {
             "Forever" : "Forever",
+            "15m": "15 Minutes",
             "30m": "30 Minutes",
             "1h": "1 Hour",
             "90m": "90 Minutes",
@@ -260,7 +261,7 @@ export class SelfServeApproval extends BaseProfile {
 
 
             // sending self approved message to user
-            let messageString = `Your ${selectedGroup} will expire in ${selectedTime}\n_Note: Group changes can take ~20 seconds to pass through to connected clients._`
+            let messageString = `Your ${selectedGroup} will expire in ${selectedTime}\n _Note: Group changes can take ~20 seconds to pass through to connected clients._`
             msgOption = {
                 channel: slackUserId,
                 text: messageString,
