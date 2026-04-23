@@ -37,7 +37,7 @@ export class SelfServeApproval extends BaseProfile {
         }
         profileConfig.title = 'Request Access';
         super(app, profileConfig, index)
-        this.openModalBlock.blocks[0].text.text = 'Which group would you like to request access to?';
+        this.openModalBlock.blocks[0].text.text = 'Which would you like to do?';
         this.timeOptions = this.timeOptions || [];
         this.timeOptions = this.timeOptions.filter(option => Object.keys(timeOptions).includes(option)).map(option => timeOptions[option])
         this.groups = this.groups || [];
@@ -113,7 +113,7 @@ export class SelfServeApproval extends BaseProfile {
                 type: "section",
                 text: {
                     type: "mrkdwn",
-                    text: `How long would you like to request access for?`
+                    text: `How long do you need access?`
                 },
                 accessory: {
                     type: "static_select",

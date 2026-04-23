@@ -4,7 +4,7 @@ import {v4 as uuidv4} from "uuid";
 
 export class OneOfProfile extends BaseProfile {
     constructor(app, profileConfig, index) {
-        profileConfig.title = 'Change Your Group';
+        profileConfig.title = 'Remove Full Tunnel';
         super(app, profileConfig, index)
         this.groups = this.groups || [];
         // Called when user selects a oneOf profile
