@@ -621,6 +621,14 @@ export class SelfServeApproval extends BaseProfile {
             return
         }
 
+        const groupInfo = await profileManager.lookUpGroupUsersByName(request.requestedGroupName)
+        const isUserInGroup = groupInfo && groupInfo.users.some(u => u.id === request.requesterTwingateId)
+
+        if (!isUserInGroup) {
+            console.log(`User ${request.requesterTwingateId} is no longer in group '${request.requestedGroupName}'. Skipping expiry notification.`)
+            return
+        }
+
         // remove user from group through twingate API
         const profileManager = new SlackProfileManager()
         await profileManager.removeUserFromGroup(request.requestedGroupId, request.requesterTwingateId)
