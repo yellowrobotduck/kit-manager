@@ -63,6 +63,7 @@ export class OneOfProfile extends BaseProfile {
         };
 
         const userGroupNames = tgUser.groups.map(group => group.name);
+        const excludedGroups = this.excludedGroups || [];
 
         for (const group of this.groups) {
             const requisiteGroup = this.profileConfig.groupPermissions[group];
