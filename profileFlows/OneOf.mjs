@@ -69,8 +69,9 @@ export class OneOfProfile extends BaseProfile {
             // If switching to this group requires that user is already in another group then skip if they're not allowed this group
             if (typeof requisiteGroup === "string" && !userGroupNames.includes(requisiteGroup)) continue;
             //todo: add if user already in the group then dont show the group as an option
-            if (userGroupNames.includes(group)) continue;
-            
+            //if (userGroupNames.includes(group)) continue;
+            if (excludedGroups.includes(group)) continue; 
+
             const option = {
                 text: {
                     type: "plain_text",

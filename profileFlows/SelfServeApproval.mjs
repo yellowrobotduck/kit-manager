@@ -82,7 +82,7 @@ export class SelfServeApproval extends BaseProfile {
         }
 
         if (!currentActiveGroupsString) {
-            block.text.text = `*Profile: ${this.profileName}* (Request Access)\nOptions: None`;
+            block.text.text = `*Profile: ${this.profileName}*\nOptions: None`;
             block.accessory.action_id = "has_all_access";
             delete block.accessory.style;
         }
@@ -261,7 +261,7 @@ export class SelfServeApproval extends BaseProfile {
 
 
             // sending self approved message to user
-            let messageString = `Your ${selectedGroup} will expire in ${selectedTime}\n _Note: Group changes can take ~20 seconds to pass through to connected clients._`
+            let messageString = `Your Full Tunnel Access will expire in ${selectedTime}\n _Note: Group changes can take ~20 seconds to pass through to connected clients._`
             msgOption = {
                 channel: slackUserId,
                 text: messageString,

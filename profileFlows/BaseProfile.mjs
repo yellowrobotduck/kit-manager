@@ -26,7 +26,7 @@ export class BaseProfile {
                     type: "section",
                     text: {
                         type: "mrkdwn",
-                        text: `Which group would you like to switch to?`
+                        text: `Which would you like to do?`
                     },
                     accessory: {
                         type: "static_select",
