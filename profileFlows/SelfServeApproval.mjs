@@ -66,7 +66,7 @@ export class SelfServeApproval extends BaseProfile {
             "type": "section",
             "text": {
                 "type": "mrkdwn",
-                "text": `*Profile: ${this.profileName}* (Request Access)\nOptions: ${currentActiveGroupsString}`
+                "text": `*Profile: ${this.profileName}*\nOptions: ${currentActiveGroupsString}`
             },
             "accessory": {
                 "type": "button",
@@ -621,16 +621,16 @@ export class SelfServeApproval extends BaseProfile {
             return
         }
 
+        const profileManager = new SlackProfileManager()
         const groupInfo = await profileManager.lookUpGroupUsersByName(request.requestedGroupName)
         const isUserInGroup = groupInfo && groupInfo.users.some(u => u.id === request.requesterTwingateId)
-
+    
         if (!isUserInGroup) {
             console.log(`User ${request.requesterTwingateId} is no longer in group '${request.requestedGroupName}'. Skipping expiry notification.`)
             return
         }
 
         // remove user from group through twingate API
-        const profileManager = new SlackProfileManager()
         await profileManager.removeUserFromGroup(request.requestedGroupId, request.requesterTwingateId)
 
         // post duration access revoked message to self
