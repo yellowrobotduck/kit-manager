@@ -26,7 +26,7 @@ export class OneOfProfile extends BaseProfile {
             "type": "section",
             "text": {
                 "type": "mrkdwn",
-                "text": `*Profile: ${this.profileName}* (One-Of)\nCurrent Group: ${currentActiveGroupsString}`
+                "text": `*Profile: ${this.profileName}*\nCurrent Group: ${currentActiveGroupsString}`
             },
             "accessory": {
                 "type": "button",
@@ -69,7 +69,8 @@ export class OneOfProfile extends BaseProfile {
             // If switching to this group requires that user is already in another group then skip if they're not allowed this group
             if (typeof requisiteGroup === "string" && !userGroupNames.includes(requisiteGroup)) continue;
             //todo: add if user already in the group then dont show the group as an option
-
+            if (userGroupNames.includes(group)) continue;
+            
             const option = {
                 text: {
                     type: "plain_text",
@@ -158,7 +159,7 @@ export class OneOfProfile extends BaseProfile {
         }
 
         // sending group change message to user
-        const messageString = `You have successfully removed yourself from Full Tunnel Access.\n\n _Note: Group changes can take ~20 seconds to pass through to connected clients._`
+        const messageString = `You have successfully removed yourself from Full Tunnel Access.\n _Note: Group changes can take ~20 seconds to pass through to connected clients._`
         let msgOption = {
             channel: slackUserId,
             text: messageString,
