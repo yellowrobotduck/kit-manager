@@ -161,7 +161,7 @@ export class OneOfProfile extends BaseProfile {
         }
 
         // sending group change message to user
-        const messageString = `You have successfully removed yourself from Full Tunnel Access.\n _Note: Group changes can take ~20 seconds to pass through to connected clients._`
+        const messageString = `You have successfully removed your Full Tunnel Access.\n _Note: Group changes can take ~20 seconds to pass through to connected clients._`
         let msgOption = {
             channel: slackUserId,
             text: messageString,

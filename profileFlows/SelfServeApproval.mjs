@@ -640,7 +640,7 @@ export class SelfServeApproval extends BaseProfile {
         })
 
         // approver message
-        let messageString = `Your _Full Tunnel Access_ has expired.\nDuration: ${request.selectedTime} (Start from the time of approval)`
+        let messageString = `Your Full Tunnel Access has expired.\nDuration: ${request.selectedTime} (Start from the time of approval)`
         let msgOption = {
             channel: request.approverSlackId,
             text: messageString,
