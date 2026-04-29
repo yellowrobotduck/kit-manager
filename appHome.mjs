@@ -24,7 +24,7 @@ export const createHome = async(profileConfig, userEmail) => {
                 elements: [
                     {
                         type: "mrkdwn",
-                        text: "<https://badrobotgames.atlassian.net/wiki/spaces/ITDSS/pages/1547436033/Setting+up+Twingate+for+Dev+Test+Kit+Playtesting#Playtesting-with-Twingate|KA for Playing with Twingate> and <https://badrobotgames.atlassian.net/wiki/spaces/TDH/pages/1516208129/Setting+up+a+development+PSN+account|KA for PSN Accounts>"
+                        text: "<https://badrobotgames.atlassian.net/wiki/spaces/ITDSS/pages/1664581633/Playtesting+With+Twingate+Full+Tunnel+Access|How to Use Full Tunnel Access>, <https://badrobotgames.atlassian.net/wiki/spaces/ITDSS/pages/1651965966/Troubleshooting+Dev+Test+Kits+on+Twingate|Troubleshooting with Twingate & Kits>, and <https://badrobotgames.atlassian.net/wiki/spaces/TDH/pages/1516208129/Setting+up+a+development+PSN+account|Setting up a Dev PSN Account>"
                     }
                 ]
             }
